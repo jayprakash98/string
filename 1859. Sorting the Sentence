@@ -1,0 +1,26 @@
+class Solution {
+    public String sortSentence(String s) {
+        TreeMap<Integer,String> map= new TreeMap<>();
+        StringBuilder ans=new StringBuilder();
+
+        for(String word: s.split(" ")){
+            int index=word.charAt(word.length()-1)-'0';
+            String actualWord=word.substring(0,word.length()-1);
+            map.put(index,actualWord);
+
+
+        }
+
+        for(int key:map.keySet()){
+            ans.append(map.get(key));
+            ans.append(" ");
+
+        }
+        // ans.append(" ");
+        ans.deleteCharAt(ans.length()-1);
+         String finalAns=ans.toString();
+         return finalAns;
+        
+    }
+
+}
